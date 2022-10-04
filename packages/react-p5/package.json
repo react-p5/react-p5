@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "watch": "tsc && vite build --watch",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage"

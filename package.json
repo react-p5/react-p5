@@ -1,0 +1,10 @@
+{
+  "name": "react-p5",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "sites/*"
+    ]
+  }
+}

@@ -19,7 +19,9 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          p5: "p5",
         },
+        exports: "named",
       },
     },
   },
