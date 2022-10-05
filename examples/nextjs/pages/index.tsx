@@ -10,7 +10,11 @@ const Sketch = dynamic(() => import('react-p5').then((mod) =>  mod.default
 const setup: SketchProps["setup"] = (p5, canvasParentRef) => {
   p5.createCanvas(400,400).parent(canvasParentRef)
   p5.background(255)
+}
 
+const draw: SketchProps["draw"] = p5 => {
+  p5.fill(255,0,0)
+  p5.ellipse(p5.width / 2, p5.height / 2, 100,100)
 }
 
 const Home: NextPage = () => {
@@ -26,7 +30,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <Sketch setup={setup} />
+        <Sketch setup={setup} draw={draw} />
       </main>
     </div>
   )

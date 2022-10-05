@@ -37,10 +37,12 @@ const Sketch: FC<SketchProps> = ({
       p.setup = () => {
         setup(p, canvasParentRef.current as Element)
       }
-      // // map over remaining props and pass prop val to p5 instance
+      // map over remaining props and pass prop val to p5 instance
       Object.entries(rest).forEach(([key, val]) => {
         if (p5Events.includes(key)) {
-          p[key](val)
+          p[key] = (...rest: any) => {
+            val(p, ...(rest as []))
+          }
         }
       })
     }, canvasParentRef.current as HTMLElement)
