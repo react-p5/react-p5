@@ -1,5 +1,6 @@
 // P5 interface contains all p5 utils, you can check all available methods and props at this url https://p5js.org/reference/
-type P5 = import("p5")
+import type P5 from "p5"
+import type { FC } from "react"
 
 declare global {
   interface Window {
@@ -55,6 +56,6 @@ export interface SketchProps {
 }
 
 /** This Component lets you integrate p5 Sketches into your React App */
-declare const Sketch: React.ComponentClass<SketchProps>
+declare const Sketch: FC<SketchProps>
 
 export default Sketch

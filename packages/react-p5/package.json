@@ -1,0 +1,53 @@
+{
+  "name": "react-p5",
+  "private": true,
+  "version": "0.0.0",
+  "description": "This Component lets you integrate p5 Sketches into your React App",
+  "main": "./dist/react-p5.umd.js",
+  "module": "./dist/react-p5.es.js",
+  "types": "./types",
+  "exports": {
+    ".": {
+      "import": "./dist/react-p5.es.js",
+      "require": "./dist/react-p5.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "watch": "tsc && vite build --watch",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "p5": "^1.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@types/p5": "^1.4.3",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jsdom": "^20.0.1",
+    "path": "^0.12.7",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.4",
+    "vitest": "^0.23.4"
+  },
+  "peerDependencies": {
+    "react": "18.x",
+    "react-dom": "18.x",
+    "p5": "1.4.x"
+  },
+  "files": [
+    "dist"
+  ]
+}

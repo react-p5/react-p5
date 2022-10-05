@@ -4,7 +4,7 @@ import { it, expect, describe, beforeEach, vi } from "vitest"
 import ReactDOMServer from "react-dom/server"
 import { render } from "@testing-library/react"
 import Sketch from "./index"
-import { SketchProps } from "../@types"
+import type { SketchProps } from "types"
 import P5 from "p5"
 
 const reactP5TestId = "react-p5"

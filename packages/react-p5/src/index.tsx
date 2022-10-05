@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react"
 import p5 from "p5"
-import { SketchProps } from "../@types"
+import type { SketchProps } from "types"
 
 export const p5Events: string[] = [
   "draw",
@@ -27,21 +27,23 @@ export const p5Events: string[] = [
 const Sketch: FC<SketchProps> = ({
   className = "react-p5",
   style,
+  setup,
   ...rest
 }) => {
   const canvasParentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const sketch: p5 = new p5(p => {
-      p.setup(p, canvasParentRef.current)
-
-      // map over remaining props and pass prop val to p5 instance
+    const sketch = new p5(p => {
+      p.setup = () => {
+        setup(p, canvasParentRef.current as Element)
+      }
+      // // map over remaining props and pass prop val to p5 instance
       Object.entries(rest).forEach(([key, val]) => {
         if (p5Events.includes(key)) {
-          p[key](p, val)
+          p[key](val)
         }
       })
-    })
+    }, canvasParentRef.current as HTMLElement)
 
     // NOTE: assigning p5 to window because someone can need it globally to use in others libraries
     if (typeof window !== "undefined") {
