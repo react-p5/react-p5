@@ -5,7 +5,7 @@
   "description": "This Component lets you integrate p5 Sketches into your React App",
   "main": "./dist/react-p5.umd.js",
   "module": "./dist/react-p5.es.js",
-  "types": "./dist/react-p5.d.ts",
+  "types": "./types",
   "exports": {
     ".": {
       "import": "./dist/react-p5.es.js",

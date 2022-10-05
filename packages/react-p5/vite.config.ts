@@ -5,11 +5,19 @@ import dts from "vite-plugin-dts"
 
 // https://vitejs.dev/config/
 const config = defineConfig({
-  plugins: [react(), dts({ insertTypesEntry: true })],
+  plugins: [
+    react(),
+    dts({
+      // include: "./@types/index.d.ts",
+      // exclude: "./src",
+      // entryRoot: "./@types",
+      insertTypesEntry: true,
+    }),
+  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.tsx"),
-      name: "react-p5",
+      name: "ReactP5",
       formats: ["es", "umd"],
       fileName: format => `react-p5.${format}.js`,
     },
