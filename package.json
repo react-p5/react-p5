@@ -1,6 +1,6 @@
 {
   "name": "react-p5",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "yarn workspace react-p5 build",
     "dev": "yarn workspace nextjs-example dev"
