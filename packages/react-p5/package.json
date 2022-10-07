@@ -11,6 +11,9 @@
     "p5",
     "p5js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/react-p5.umd.js",
   "module": "./dist/react-p5.es.js",
   "types": "./types",
