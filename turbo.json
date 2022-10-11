@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["yarn.lock"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "test":{
+      "dependsOn": ["lint", "build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+    },
+    "lint": {},
+    "deploy": {
+      "dependsOn": ["build", "lint"],
+      "outputs": ["dist/**"]
+    }
+  }
+}

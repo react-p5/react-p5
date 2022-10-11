@@ -1,9 +1,10 @@
 {
   "name": "react-p5",
-  "private": false,
+  "private": true,
   "scripts": {
-    "build": "yarn workspace react-p5 build",
-    "dev": "yarn workspace nextjs-example dev"
+    "build": "turbo run build lint --filter=react-p5",
+    "dev": "turbo run dev --filter=nextjs-example",
+    "publish-packages": "turbo run build lint --filter=react-p5 && changeset version && changeset publish"
   },
   "workspaces": {
     "packages": [
@@ -12,9 +13,11 @@
     ]
   },
   "devDependencies": {
-    "turbo": "^1.5.5"
+    "turbo": "^1.5.6"
   },
   "dependencies": {
     "@changesets/cli": "^2.25.0"
-  }
+  },
+  "version": "0.0.2",
+  "license": "MIT"
 }

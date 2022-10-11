@@ -8,10 +8,9 @@ const config = defineConfig({
   plugins: [
     react(),
     dts({
-      // include: "./@types/index.d.ts",
-      // exclude: "./src",
-      // entryRoot: "./@types",
-      insertTypesEntry: true,
+      include: "./types/index.d.ts",
+      exclude: "./src",
+      entryRoot: "./types",
     }),
   ],
   build: {
