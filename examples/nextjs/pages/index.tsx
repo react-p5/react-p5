@@ -1,23 +1,33 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import type { SketchProps } from 'react-p5'
+import type { SketchProps } from '@react-p5/react-p5'
 import styles from '../styles/Home.module.css'
 import dynamic from 'next/dynamic'
+import { useState } from 'react'
 
-const Sketch = dynamic(() => import('react-p5').then((mod) =>  mod.default
+const Sketch = dynamic(() => import('@react-p5/react-p5').then((mod) =>  mod.default
 ), {ssr: false});
 
-const setup: SketchProps["setup"] = (p5, canvasParentRef) => {
-  p5.createCanvas(400,400).parent(canvasParentRef)
-  p5.background(255)
-}
-
-const draw: SketchProps["draw"] = p5 => {
-  p5.fill(255,0,0)
-  p5.ellipse(p5.width / 2, p5.height / 2, 100,100)
-}
 
 const Home: NextPage = () => {
+  const [seed, setSeed] = useState<number>(0)
+
+  const setup: SketchProps["setup"] = (p5, canvasParentRef) => {
+    p5.createCanvas(800,800).parent(canvasParentRef)
+    p5.background(255)
+    setSeed(10)
+  }
+  
+  const draw: SketchProps["draw"] = p5 => {
+    p5.randomSeed(seed)
+    p5.background(255)
+    p5.fill(255,0,0)
+    const length = p5.random(200)
+
+    Array.from({length}, () => {
+      p5.ellipse(p5.random(p5.width), p5.random(p5.height), 20, 20)
+    })
+  }
   return (
     <div className={styles.container}>
       <Head>
