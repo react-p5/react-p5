@@ -1,5 +1,5 @@
 {
-  "name": "@react-p5/react-p5",
+  "name": "@react-p5/core",
   "description": "This Component lets you integrate p5 Sketches into your React App",
   "version": "0.1.0",
   "author": "Xander Low <xander@xandydandy.com>",

@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import type { SketchProps } from '@react-p5/react-p5'
+import type { SketchProps } from '../../../packages/core/dist'
 import styles from '../styles/Home.module.css'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
-const Sketch = dynamic(() => import('@react-p5/react-p5').then((mod) =>  mod.default
+const Sketch = dynamic(() => import('../../../packages/core/dist').then((mod) =>  mod.default
 ), {ssr: false});
 
 
