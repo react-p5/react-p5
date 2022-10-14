@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.1.3
+
+### Patch Changes
+
+- fixed: dist exports
+
 ## 0.1.2
 
 ### Patch Changes

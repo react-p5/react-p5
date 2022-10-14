@@ -8,15 +8,15 @@ const config = defineConfig({
   plugins: [
     react(),
     dts({
-      include: "./types/index.d.ts",
-      exclude: "./src",
-      entryRoot: "./types",
+      // include: "./types/index.d.ts",
+      // exclude: "./src",
+      // entryRoot: "./types",
     }),
   ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "ReactP5",
+      name: "ReactP5Utils",
       formats: ["es", "umd"],
       fileName: format => `utils.${format}.js`,
     },
