@@ -2,7 +2,8 @@
   "name": "react-p5",
   "private": true,
   "scripts": {
-    "build": "turbo run build lint --filter=@react-p5/core",
+    "_build": "turbo run build lint --filter=@react-p5/core",
+    "build": "turbo run build lint",
     "dev": "turbo run dev --filter=nextjs-example",
     "publish-packages": "turbo run build lint --filter=@react-p5/core && changeset version && changeset publish"
   },

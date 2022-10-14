@@ -1,0 +1,66 @@
+{
+  "name": "@react-p5/utils",
+  "description": "This library consists of \"nice to haves\" to alleviate repetitive tasks and boilerplate from your sketches.",
+  "version": "0.1.0",
+  "author": "Xander Low <xander@xandydandy.com>",
+  "repository": "https://github.com/react-p5/react-p5.git",
+  "homepage": "https://github.com/react-p5/react-p5",
+  "bugs": "https://github.com/react-p5/react-p5/issues",
+  "keywords": [
+    "react-p5",
+    "p5",
+    "p5js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/utils.umd.js",
+  "module": "./dist/utils.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/utils.es.js",
+      "require": "./dist/utils.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "watch": "tsc && vite build --watch",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "p5": "^1.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@types/node": "^18.8.5",
+    "@types/p5": "^1.4.3",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jsdom": "^20.0.1",
+    "path": "^0.12.7",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.7",
+    "vite-plugin-dts": "^1.6.4",
+    "vitest": "^0.24.1"
+  },
+  "peerDependencies": {
+    "p5": "1.4.x",
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT"
+}
