@@ -3,7 +3,7 @@
 import { it, expect, describe, beforeEach, vi } from "vitest"
 import ReactDOMServer from "react-dom/server"
 import { render } from "@testing-library/react"
-import Sketch from "./index"
+import Sketch from "./components/Sketch"
 import type { SketchProps } from "types"
 import P5 from "p5"
 
