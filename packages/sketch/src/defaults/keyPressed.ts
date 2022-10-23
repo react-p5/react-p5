@@ -1,5 +1,4 @@
 import type { Color } from "p5"
-import type { KeyboardEvent } from "react"
 import type { ColorValue, P5 } from "@react-p5/core"
 
 export interface KeyPressed {
