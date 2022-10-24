@@ -1,14 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import type { SketchProps } from '@react-p5/core'
+// import type { SketchProps } from '@react-p5/core'
 import styles from '../styles/Home.module.css'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import {createGrain} from "@react-p5/utils"
 import type {Graphics} from 'p5'
+import Sketch, {SketchProps} from "@react-p5/sketch"
 
-const Sketch = dynamic(() => import('@react-p5/core').then((mod) =>  mod.default
-), {ssr: false});
+// const Sketch = dynamic(() => import('@react-p5/core').then((mod) =>  mod.default
+// ), {ssr: false});
 
 let grain: Graphics
 

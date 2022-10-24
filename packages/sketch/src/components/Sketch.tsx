@@ -1,22 +1,29 @@
-import SketchCore from "@react-p5/core"
 import {
   setup as setupDefaults,
   windowResized as windowResizedDefaults,
   keyPressed as keyPressedDefaults,
-} from "src/defaults"
-import { FC, useRef } from "react"
+} from "../defaults"
+import { FC, lazy, Suspense, useRef } from "react"
 import type { Draw, KeyPressed, Setup, WindowResized } from "@react-p5/core"
 import type { SketchProps } from "types"
-import { useGetOs } from "src/hooks"
-import { Box } from "@chakra-ui/react"
+import { useGetOs } from "../hooks"
+import { Box, Spinner } from "@chakra-ui/react"
 import UI from "./UI"
+
+const SketchCore = lazy(
+  () =>
+    import("@react-p5/core").then(mod => {
+      require("p5.js-svg")
+
+      return { default: mod.default }
+    }) as Promise<{ default: FC<SketchProps> }>
+)
 
 const Sketch: FC<SketchProps> = ({
   setup,
   draw,
   windowResized,
   keyPressed,
-  mouseClicked,
   suffix,
   padding,
   width,
@@ -27,7 +34,6 @@ const Sketch: FC<SketchProps> = ({
   pixelDensity,
   seed,
   renderSVG,
-  enableUI,
   UIValues,
   noLoop = false,
   sketchTitle,
@@ -108,7 +114,7 @@ const Sketch: FC<SketchProps> = ({
   }
 
   return (
-    <>
+    <Suspense fallback={<Spinner color="red.100" />}>
       {UIValues?.length && (
         <UI ref={uiRef} values={UIValues} noLoop={noLoop} title={sketchTitle} />
       )}
@@ -136,7 +142,7 @@ const Sketch: FC<SketchProps> = ({
           {...rest}
         />
       </Box>
-    </>
+    </Suspense>
   )
 }
 

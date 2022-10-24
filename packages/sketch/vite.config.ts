@@ -15,7 +15,7 @@ const config = defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.tsx"),
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "ReactP5",
       formats: ["es", "umd"],
       fileName: format => `react-p5-sketch.${format}.js`,
