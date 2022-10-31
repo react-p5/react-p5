@@ -3,7 +3,7 @@ import {
   windowResized as windowResizedDefaults,
   keyPressed as keyPressedDefaults,
 } from "../defaults"
-import { FC, lazy, Suspense, useRef } from "react"
+import { FC, lazy, Suspense, useEffect, useRef } from "react"
 import type { Draw, KeyPressed, Setup, WindowResized } from "@react-p5/core"
 import type { SketchProps } from "types"
 import { useGetOs } from "../hooks"
@@ -13,10 +13,10 @@ import UI from "./UI"
 const SketchCore = lazy(
   () =>
     import("@react-p5/core").then(mod => {
-      require("p5.js-svg")
-
       return { default: mod.default }
-    }) as Promise<{ default: FC<SketchProps> }>
+    }) as Promise<{
+      default: FC<SketchProps>
+    }>
 )
 
 const Sketch: FC<SketchProps> = ({
@@ -41,6 +41,14 @@ const Sketch: FC<SketchProps> = ({
 }) => {
   const os = useGetOs()
   const uiRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      import("p5.js-svg")
+    }
+  }, [])
 
   const defaultSetup: Setup = (p5, canvasParentRef) => {
     setupDefaults({

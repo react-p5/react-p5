@@ -1,5 +1,5 @@
 // P5 interface contains all p5 utils, you can check all available methods and props at this url https://p5js.org/reference/
-import type P5Types from "@types/p5"
+import type P5Types from "p5"
 import type { FC } from "react"
 
 export interface P5 extends P5Types {
