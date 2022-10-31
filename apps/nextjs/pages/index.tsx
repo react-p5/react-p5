@@ -6,7 +6,11 @@ import { ColorValue, Draw, P5, Setup } from "@react-p5/core";
 import type { Graphics } from "p5";
 
 const Sketch = dynamic(
-  () => import("@react-p5/sketch").then((mod) => mod.default),
+  () =>
+    import("@react-p5/sketch").then((mod) => {
+      import("p5.js-svg");
+      return mod.default;
+    }),
   { ssr: false }
 );
 

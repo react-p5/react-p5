@@ -26,7 +26,6 @@ const config = defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
-          p5: "P5",
         },
         exports: "named",
       },
