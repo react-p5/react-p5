@@ -3,7 +3,7 @@ import {
   windowResized as windowResizedDefaults,
   keyPressed as keyPressedDefaults,
 } from "../defaults"
-import { FC, lazy, Suspense, useRef } from "react"
+import { FC, lazy, Suspense, useEffect, useRef } from "react"
 import type { Draw, KeyPressed, Setup, WindowResized } from "@react-p5/core"
 import type { SketchProps } from "types"
 import { useGetOs } from "../hooks"
@@ -41,6 +41,20 @@ const Sketch: FC<SketchProps> = ({
 }) => {
   const os = useGetOs()
   const uiRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const svg = async () => await import("p5.js-svg").then(mod => mod.default)
+    if (typeof window !== "undefined") {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      svg(window.p5)
+      console.log("The p5 instance was passed.")
+    } else {
+      svg()
+      console.log("The p5 instance was not passed.")
+    }
+  }, [])
 
   const defaultSetup: Setup = (p5, canvasParentRef) => {
     setupDefaults({

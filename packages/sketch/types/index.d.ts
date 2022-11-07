@@ -1,4 +1,4 @@
-import { SketchProps as SketchCoreProps } from "@react-p5/core"
+import { Setup, SketchProps as SketchCoreProps } from "@react-p5/core"
 import { RENDERER } from "p5"
 import { ColorValue } from "@react-p5/core"
 import { Dispatch, FC, SetStateAction } from "react"
@@ -15,7 +15,8 @@ export interface UIProps {
   title?: string
 }
 
-export interface SketchProps extends SketchCoreProps {
+export interface SketchProps extends Omit<SketchCoreProps, "setup"> {
+  setup?: Setup
   suffix?: string | number
   padding?: number[]
   width?: number
