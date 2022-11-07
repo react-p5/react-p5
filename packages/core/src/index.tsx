@@ -51,7 +51,10 @@ const Sketch: FC<SketchProps> = ({
 
       // NOTE: assigning p5 to window because someone can need it globally to use in others libraries
       if (typeof window !== "undefined") {
-        window.p5 = currentSketch.current
+        // window.p5 = currentSketch.current
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        window.p5 = p5
       }
     } else {
       // map over remaining props and pass prop val to p5 instance

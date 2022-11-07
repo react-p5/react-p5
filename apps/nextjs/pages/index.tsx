@@ -4,9 +4,16 @@ import dynamic from "next/dynamic";
 import { createGrain, linearGradient } from "@react-p5/utils";
 import { ColorValue, Draw, P5, Setup } from "@react-p5/core";
 import type { Graphics } from "p5";
+import { FunctionComponent, useState } from "react";
+import { SketchProps } from "@react-p5/sketch";
 
 const Sketch = dynamic(
-  () => import("@react-p5/sketch").then((mod) => mod.default),
+  () =>
+    import("@react-p5/sketch").then((mod) => {
+      require("p5.js-svg");
+
+      return mod.default;
+    }) as Promise<FunctionComponent<SketchProps>>,
   { ssr: false }
 );
 
@@ -18,6 +25,7 @@ const Home: NextPage = () => {
   const background: ColorValue = [255, 253, 252];
   let grain: Graphics;
   let margin: number;
+  const [beep, setBeep] = useState<number>(0);
 
   const gradientArc = (
     p5: P5,
@@ -141,8 +149,8 @@ const Home: NextPage = () => {
           dimensions={dimensions}
           padding={padding}
           background={background}
-          noLoop
-          renderSVG
+          enableUI
+          UIValues={[{ label: "beep", setValue: setBeep, value: beep }]}
         />
       </main>
     </div>

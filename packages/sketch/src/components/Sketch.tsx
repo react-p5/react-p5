@@ -42,17 +42,13 @@ const Sketch: FC<SketchProps> = ({
   const os = useGetOs()
   const uiRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const svg = async () => await import("p5.js-svg").then(mod => mod.default)
     if (typeof window !== "undefined") {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      svg(window.p5)
-      console.log("The p5 instance was passed.")
-    } else {
+      const svg = async () => await import("p5.js-svg").then(mod => mod.default)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       svg()
-      console.log("The p5 instance was not passed.")
     }
   }, [])
 
