@@ -14,9 +14,14 @@ const config = {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
   ],
-  plugins: ["@typescript-eslint", "prettier", "simple-import-sort"],
+  plugins: ["@typescript-eslint", "prettier", "simple-import-sort", "unused-imports"],
   rules: {
-    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
+    ]
   },
 };
 

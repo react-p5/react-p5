@@ -1,9 +1,9 @@
 import {
   setup as setupDefaults,
   windowResized as windowResizedDefaults,
-  keyPressed as keyPressedDefaults,
+  keyPressed as keyPressedDefaults
 } from "../defaults"
-import { FC, lazy, Suspense, useEffect, useRef } from "react"
+import { FC, lazy, Suspense, useRef } from "react"
 import type { Draw, KeyPressed, Setup, WindowResized } from "@react-p5/core"
 import type { SketchProps } from "types"
 import { useGetOs } from "../hooks"
@@ -41,21 +41,6 @@ const Sketch: FC<SketchProps> = ({
 }) => {
   const os = useGetOs()
   const uiRef = useRef<HTMLDivElement>(null)
-  // useEffect(() => {
-  //   // if (typeof window !== "undefined") {
-  //   if (window.p5) {
-  //     console.log("Kiss my ass.")
-  //     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //     // @ts-ignore
-  //     // import("p5.js-svg").then(mod => {
-  //     //   console.log(mod)
-  //     // })
-  //     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //     // @ts-ignore
-  //     // svg()
-  //     console.log({ window })
-  //   }
-  // }, [])
 
   const defaultSetup: Setup = (p5, canvasParentRef) => {
     setupDefaults({
@@ -69,7 +54,7 @@ const Sketch: FC<SketchProps> = ({
       renderer,
       renderSVG,
       seed,
-      pixelDensity,
+      pixelDensity
     })
     setup && setup(p5, canvasParentRef)
   }
@@ -94,7 +79,7 @@ const Sketch: FC<SketchProps> = ({
       padding,
       background,
       seed,
-      noLoop,
+      noLoop
     })
 
     windowResized && windowResized(p5)
@@ -107,7 +92,7 @@ const Sketch: FC<SketchProps> = ({
     hour12: false,
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
+    second: "2-digit"
   })
   const fileName = date + (suffix ? `-${suffix}` : "")
 
@@ -122,7 +107,7 @@ const Sketch: FC<SketchProps> = ({
       dimensions,
       background,
       renderSVG,
-      noLoop,
+      noLoop
     })
 
     keyPressed && keyPressed(p5, event)
@@ -131,7 +116,12 @@ const Sketch: FC<SketchProps> = ({
   return (
     <Suspense fallback={<Spinner color="red.100" />}>
       {UIValues?.length && (
-        <UI ref={uiRef} values={UIValues} noLoop={noLoop} title={sketchTitle} />
+        <UI
+          ref={uiRef}
+          values={UIValues}
+          noLoop={noLoop}
+          title={sketchTitle || "values"}
+        />
       )}
       <Box
         css={{
@@ -140,11 +130,11 @@ const Sketch: FC<SketchProps> = ({
             justifyContent: "center",
             alignItems: "center",
             flex: 1,
-            minHeight: "100vh",
+            minHeight: "100vh"
           },
           ".p5Canvas": {
-            boxShadow: "1px 3px 6px -1px rgba(0, 0, 0, 0.5)",
-          },
+            boxShadow: "1px 3px 6px -1px rgba(0, 0, 0, 0.5)"
+          }
         }}
       >
         <SketchCore

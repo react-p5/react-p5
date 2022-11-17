@@ -9,7 +9,10 @@
     "dev": {
       "cache": false
     },
-    "test":{
+    "watch": {
+      "cache": false
+    },
+    "test": {
       "dependsOn": ["lint", "build"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },

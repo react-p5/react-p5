@@ -13,7 +13,7 @@ import {
   SliderThumb,
   SliderTrack,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react"
 import { UIProps } from "types"
 
@@ -30,6 +30,7 @@ const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
       ref={ref}
       position="absolute"
       maxW="max-content"
+      minW="20ch"
       mt={6}
       ml={6}
       p={3}
@@ -54,7 +55,7 @@ const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
               const { label, value, setValue, max } = v
 
               return (
-                <VStack key={i} align="flex-start">
+                <VStack key={i} align="stretch">
                   <HStack>
                     <Text whiteSpace="nowrap">{label}:</Text>
                     <Input
