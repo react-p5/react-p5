@@ -1,17 +1,25 @@
 {
   "name": "nextjs-example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "clean": "rm -rf ./.next",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@chakra-ui/react": "*",
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
     "@react-p5/core": "*",
+    "@react-p5/sketch": "*",
     "@react-p5/utils": "*",
+    "framer-motion": "*",
     "next": "12.3.1",
+    "p5": "^1.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -19,8 +27,17 @@
     "@types/node": "18.8.4",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.25.0",
+    "eslint": "*",
     "eslint-config-next": "12.3.1",
-    "typescript": "4.8.4"
-  }
+    "eslint-plugin-prettier": "*",
+    "prettier": "*",
+    "typescript": "*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "next/core-web-vitals",
+      "../../eslint"
+    ]
+  },
+  "prettier": "../../prettier"
 }
