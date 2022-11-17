@@ -29,7 +29,9 @@
     "watch": "tsc && vite build --watch",
     "preview": "vite preview",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "p5": "^1.4.2",

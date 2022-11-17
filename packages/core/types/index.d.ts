@@ -9,7 +9,7 @@ export interface P5 extends P5Types {
 
 declare global {
   interface Window {
-    p5: P5Types
+    p5?: P5Types
   }
 }
 

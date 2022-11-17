@@ -14,6 +14,7 @@
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
     "lint": {},
+    "lint:fix": {},
     "deploy": {
       "dependsOn": ["build", "lint"],
       "outputs": ["dist/**"]

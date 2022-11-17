@@ -20,8 +20,8 @@ import { UIProps } from "types"
 const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
   const loop = () => {
     if (typeof window !== "undefined" && noLoop) {
-      window.p5.loop()
-      window.p5.noLoop()
+      window.p5?.loop()
+      window.p5?.noLoop()
     }
   }
 

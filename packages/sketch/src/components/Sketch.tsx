@@ -41,16 +41,21 @@ const Sketch: FC<SketchProps> = ({
 }) => {
   const os = useGetOs()
   const uiRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      const svg = async () => await import("p5.js-svg").then(mod => mod.default)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      svg()
-    }
-  }, [])
+  // useEffect(() => {
+  //   // if (typeof window !== "undefined") {
+  //   if (window.p5) {
+  //     console.log("Kiss my ass.")
+  //     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //     // @ts-ignore
+  //     // import("p5.js-svg").then(mod => {
+  //     //   console.log(mod)
+  //     // })
+  //     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //     // @ts-ignore
+  //     // svg()
+  //     console.log({ window })
+  //   }
+  // }, [])
 
   const defaultSetup: Setup = (p5, canvasParentRef) => {
     setupDefaults({
