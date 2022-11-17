@@ -16,8 +16,8 @@ const Sketch = dynamic(
 )
 
 const Home: NextPage = () => {
-  const width: number = 2048
-  const height: number = 2048
+  const width = 2048
+  const height = 2048
   const dimensions: number[] = [width, height]
   const padding: number[] = [40]
   const background: ColorValue = [255, 253, 252]

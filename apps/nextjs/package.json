@@ -30,8 +30,15 @@
     "@types/react-dom": "18.0.6",
     "eslint": "*",
     "eslint-config-next": "12.3.1",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "*",
     "prettier": "*",
-    "typescript": "4.8.4"
-  }
+    "typescript": "*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "next/core-web-vitals",
+      "../../eslint"
+    ]
+  },
+  "prettier": "../../prettier"
 }

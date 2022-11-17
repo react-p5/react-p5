@@ -24,7 +24,7 @@ export const p5Events: string[] = [
   "touchEnded",
   "deviceMoved",
   "deviceTurned",
-  "deviceShaken",
+  "deviceShaken"
 ]
 
 const Sketch: FC<SketchProps> = ({

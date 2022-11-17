@@ -61,5 +61,9 @@
   "files": [
     "dist"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "prettier": "../../prettier",
+  "eslintConfig": {
+    "extends": "../../eslint"
+  }
 }
