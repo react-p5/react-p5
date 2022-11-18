@@ -1,7 +1,7 @@
 {
   "name": "@react-p5/sketch",
   "description": "This Component lets you integrate p5 Sketches into your React App",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Xander Low <xander@xandydandy.com>",
   "repository": "https://github.com/react-p5/react-p5.git",
   "homepage": "https://github.com/react-p5/react-p5",

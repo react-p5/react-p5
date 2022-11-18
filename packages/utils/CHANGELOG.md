@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.1.4
+
+### Patch Changes
+
+- folded svg renderer into core lib
+
 ## 0.1.3
 
 ### Patch Changes
