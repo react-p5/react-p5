@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build lint",
     "dev": "turbo run dev --filter=nextjs-example",
+    "clean": "rm -rf ./apps/nextjs/.next",
     "watch": "turbo run watch",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",

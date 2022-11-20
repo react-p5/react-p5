@@ -4,16 +4,9 @@ import dynamic from "next/dynamic"
 import { createGrain, linearGradient } from "@react-p5/utils"
 import { ColorValue, Draw, P5, Setup } from "@react-p5/core"
 import type { Graphics } from "p5"
-import { FunctionComponent, useState } from "react"
-import { SketchProps } from "@react-p5/sketch"
+import { useState } from "react"
 
-const Sketch = dynamic(
-  () =>
-    import("@react-p5/sketch").then(mod => {
-      return mod.default
-    }) as Promise<FunctionComponent<SketchProps>>,
-  { ssr: false }
-)
+const Sketch = dynamic(() => import("@react-p5/sketch"), { ssr: false })
 
 const Home: NextPage = () => {
   const width = 2048
@@ -21,9 +14,9 @@ const Home: NextPage = () => {
   const dimensions: number[] = [width, height]
   const padding: number[] = [40]
   const background: ColorValue = [255, 253, 252]
-  let grain: Graphics
   let margin: number
   const [beep, setBeep] = useState<number>(0)
+  const [grain, setGrain] = useState<Graphics>()
 
   const gradientArc = (
     p5: P5,
@@ -48,7 +41,7 @@ const Home: NextPage = () => {
   }
 
   const setup: Setup = p5 => {
-    grain = createGrain(p5)
+    setGrain(createGrain(p5))
   }
 
   const draw: Draw = p5 => {
@@ -129,7 +122,7 @@ const Home: NextPage = () => {
     p5.ellipse(e2x1, e2y1, e2x2, e2y2)
     p5.pop()
 
-    p5.image(grain, 0, 0, p5.width, p5.height)
+    p5.image(grain!, 0, 0, p5.width, p5.height)
   }
 
   return (
@@ -147,10 +140,11 @@ const Home: NextPage = () => {
           dimensions={dimensions}
           padding={padding}
           background={background}
-          // enableUI
-          // UIValues={[
-          //   { label: "beep", setValue: setBeep, value: beep, max: 2000 }
-          // ]}
+          enableUI
+          sketchTitle="Beep"
+          UIValues={[
+            { label: "beep", setValue: setBeep, value: beep, max: 2000 }
+          ]}
         />
       </main>
     </div>

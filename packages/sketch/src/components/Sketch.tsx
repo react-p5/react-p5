@@ -4,11 +4,36 @@ import {
   keyPressed as keyPressedDefaults
 } from "../defaults"
 import { FC, lazy, Suspense, useRef } from "react"
-import type { Draw, KeyPressed, Setup, WindowResized } from "@react-p5/core"
-import type { SketchProps } from "types"
+import type {
+  Draw,
+  KeyPressed,
+  Setup,
+  WindowResized,
+  SketchProps as SketchCoreProps,
+  ColorValue
+} from "@react-p5/core"
 import { useGetOs } from "../hooks"
 import { Box, Spinner } from "@chakra-ui/react"
-import UI from "./UI"
+import { UI, UIValue } from "./UI"
+import { RENDERER } from "p5"
+
+export interface SketchProps extends Omit<SketchCoreProps, "setup"> {
+  setup?: Setup
+  suffix?: string | number
+  padding?: number[]
+  width?: number
+  height?: number
+  dimensions?: number[]
+  renderer?: RENDERER
+  background?: ColorValue
+  pixelDensity?: number
+  seed?: number
+  renderSVG?: boolean
+  enableUI?: boolean
+  UIValues?: UIValue[]
+  noLoop?: boolean
+  sketchTitle?: string
+}
 
 const SketchCore = lazy(
   () =>
@@ -19,7 +44,7 @@ const SketchCore = lazy(
     }>
 )
 
-const Sketch: FC<SketchProps> = ({
+export const Sketch: FC<SketchProps> = ({
   setup,
   draw,
   windowResized,
@@ -116,12 +141,7 @@ const Sketch: FC<SketchProps> = ({
   return (
     <Suspense fallback={<Spinner color="red.100" />}>
       {UIValues?.length && (
-        <UI
-          ref={uiRef}
-          values={UIValues}
-          noLoop={noLoop}
-          title={sketchTitle || "values"}
-        />
+        <UI ref={uiRef} values={UIValues} title={sketchTitle || "values"} />
       )}
       <Box
         css={{
@@ -150,5 +170,3 @@ const Sketch: FC<SketchProps> = ({
     </Suspense>
   )
 }
-
-export default Sketch

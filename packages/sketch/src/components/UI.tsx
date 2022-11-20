@@ -15,16 +15,21 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react"
-import { UIProps } from "types"
+import { Dispatch, SetStateAction } from "react"
 
-const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
-  const loop = () => {
-    if (typeof window !== "undefined" && noLoop) {
-      window.p5?.loop()
-      window.p5?.noLoop()
-    }
-  }
+export interface UIValue {
+  label: string
+  value: number
+  setValue: Dispatch<SetStateAction<number>>
+  max?: number
+}
 
+export interface UIProps {
+  values?: UIValue[]
+  title?: string
+}
+
+export const UI = forwardRef<UIProps, "div">(({ values, title }, ref) => {
   return (
     <Accordion
       ref={ref}
@@ -61,10 +66,7 @@ const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
                     <Input
                       type="number"
                       value={value}
-                      onChange={e => {
-                        setValue(parseInt(e.target.value))
-                        loop()
-                      }}
+                      onChange={e => setValue(parseInt(e.target.value))}
                       maxW={`${Math.floor(value.toString().length * 2)}ch`}
                       p={0}
                       textAlign="center"
@@ -76,10 +78,7 @@ const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
                     defaultValue={value}
                     value={value}
                     max={max}
-                    onChange={v => {
-                      setValue(v)
-                      loop()
-                    }}
+                    onChange={v => setValue(v)}
                   >
                     <SliderTrack>
                       <SliderFilledTrack />
@@ -95,5 +94,3 @@ const UI = forwardRef<UIProps, "div">(({ values, noLoop, title }, ref) => {
     </Accordion>
   )
 })
-
-export default UI
