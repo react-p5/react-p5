@@ -1,5 +1,11 @@
 # @react-p5/react-p5
 
+## 0.1.0
+
+### Minor Changes
+
+- refactored declaration patterns. fixed ui rendering bug
+
 ## 0.0.2
 
 ### Patch Changes
