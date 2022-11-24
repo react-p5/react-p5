@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.1.5
+
+### Patch Changes
+
+- added createGrid util function
+
 ## 0.1.4
 
 ### Patch Changes
