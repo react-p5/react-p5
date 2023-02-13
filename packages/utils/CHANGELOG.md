@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.2.0
+
+### Minor Changes
+
+- bump to p5 1.5.x
+
 ## 0.1.5
 
 ### Patch Changes

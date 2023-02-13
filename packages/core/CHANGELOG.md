@@ -1,5 +1,11 @@
 # @react-p5/react-p5
 
+## 1.2.0
+
+### Minor Changes
+
+- bump to p5 1.5.x
+
 ## 1.1.0
 
 ### Minor Changes

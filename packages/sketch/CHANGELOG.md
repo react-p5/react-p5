@@ -1,5 +1,16 @@
 # @react-p5/react-p5
 
+## 0.2.0
+
+### Minor Changes
+
+- bump to p5 1.5.x
+
+### Patch Changes
+
+- Updated dependencies
+  - @react-p5/core@1.2.0
+
 ## 0.1.0
 
 ### Minor Changes
