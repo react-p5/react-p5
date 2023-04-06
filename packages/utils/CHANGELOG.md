@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.3.0
+
+### Minor Changes
+
+- fixed: type declaration error fixed by vite plugin reversion"
+
 ## 0.2.0
 
 ### Minor Changes

@@ -16,16 +16,18 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "declaration": true,
     "jsx": "react-jsx",
     "typeRoots": [
       "types"
     ]
   },
   "include": [
-    "src"
+    "src",
   ],
   "references": [
     {

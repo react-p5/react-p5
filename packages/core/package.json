@@ -1,7 +1,7 @@
 {
   "name": "@react-p5/core",
   "description": "This Component lets you integrate p5 Sketches into your React App",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Xander Low <xander@xandydandy.com>",
   "repository": "https://github.com/react-p5/react-p5.git",
   "homepage": "https://github.com/react-p5/react-p5",
@@ -34,31 +34,31 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "p5": "1.5.0",
+    "p5": "1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@testing-library/react": "13.4.0",
-    "@types/p5": "1.5.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.10",
-    "@typescript-eslint/eslint-plugin": "5.52.0",
-    "@typescript-eslint/parser": "5.52.0",
+    "@testing-library/react": "14.0.0",
+    "@types/p5": "1.6.0",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "5.57.1",
+    "@typescript-eslint/parser": "5.57.1",
     "@vitejs/plugin-react": "3.1.0",
-    "eslint": "8.34.0",
+    "eslint": "8.37.0",
     "eslint-plugin-prettier": "4.2.1",
-    "jsdom": "21.1.0",
+    "jsdom": "21.1.1",
     "p5.js-svg": "1.3.3",
     "path": "0.12.7",
-    "typescript": "4.9.5",
-    "vite": "4.1.1",
-    "vite-plugin-dts": "1.7.2",
-    "vitest": "0.28.5"
+    "typescript": "4.8.4",
+    "vite": "4.2.1",
+    "vite-plugin-dts": "1.7.3",
+    "vitest": "0.29.8"
   },
   "peerDependencies": {
-    "p5": "1.4.x",
-    "p5.js-svg": "1.3.3",
+    "p5": "^1.6.0",
+    "p5.js-svg": "^1.3.3",
     "react": "18.x",
     "react-dom": "18.x"
   },
