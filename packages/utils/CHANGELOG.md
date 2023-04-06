@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.3.1
+
+### Patch Changes
+
+- fixed: devdeps
+
 ## 0.3.0
 
 ### Minor Changes
