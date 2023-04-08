@@ -1,5 +1,12 @@
 # nextjs-example
 
+## 0.3.4
+
+### Patch Changes
+
+- Updated dependencies [8a7ec15]
+  - @react-p5/sketch@0.3.2
+
 ## 0.3.3
 
 ### Patch Changes

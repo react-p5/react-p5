@@ -1,5 +1,11 @@
 # @react-p5/react-p5
 
+## 0.3.2
+
+### Patch Changes
+
+- 8a7ec15: updated devdeps
+
 ## 0.3.1
 
 ### Patch Changes
