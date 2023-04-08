@@ -1,5 +1,12 @@
 # nextjs-example
 
+## 0.3.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @react-p5/utils@0.4.0
+
 ## 0.3.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @react-p5/utils
 
+## 0.4.0
+
+### Minor Changes
+
+- added: new canvas sizes
+
 ## 0.3.1
 
 ### Patch Changes
