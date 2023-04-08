@@ -1,5 +1,11 @@
 # @react-p5/react-p5
 
+## 0.3.3
+
+### Patch Changes
+
+- fixed: typo in peer deps
+
 ## 0.3.2
 
 ### Patch Changes
